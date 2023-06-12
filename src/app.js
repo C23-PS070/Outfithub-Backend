@@ -1,42 +1,60 @@
 const express = require('express');
-const { Sequelize } = require('sequelize');
-const routes = require('./routes');
-
 const app = express();
+const { Sequelize } = require('sequelize');
+const config = require('./config/config');
+const { User } = require('./models/user');
+const authRoutes = require('./routes/auth');
 
-// Configuration for Cloud SQL
-const config = {
-  user: 'root', // Ganti dengan username Cloud SQL MySQL Anda
-  password: 'Outfithub@CS23!', // Ganti dengan password Cloud SQL MySQL Anda
-  database: 'outfithub-db', // Ganti dengan nama database Cloud SQL MySQL Anda
-  socketPath: 'project-capstone-386905:asia-southeast2:outfithub-db', // Ganti dengan Connection Name Cloud SQL MySQL Anda
-};
-
-// Create connection to Cloud SQL
-const sequelize = new Sequelize(config.database, config.user, config.password, {
-  dialect: 'mysql',
-  dialectOptions: {
-    socketPath: config.socketPath
-  },
-  logging: false
-});
-
-// Import models
-const User = require('./models/user')(sequelize);
-
-// Define associations (if any)
-// User.hasMany(...);
-
-// Parse JSON request body
+// Middleware
 app.use(express.json());
 
 // Routes
-app.use('/api/v1', routes);
+app.use('/auth', authRoutes);
 
-// Sync database and start server
-sequelize.sync().then(() => {
-  const port = process.env.PORT || 3000;
-  app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-  });
+// Mengambil credential Service Account dari file
+const serviceAccountKey = require('./project-capstone.json');
+
+// Inisialisasi database
+(async () => {
+  try {
+    const sequelize = new Sequelize({
+      dialect: 'mysql',
+      dialectOptions: {
+        ssl: {
+          ca: serviceAccountKey.client_email,
+        },
+      },
+      // username: config.db.username,
+      // password: config.db.password,
+      // database: config.db.database,
+      // host: config.db.host,
+    });
+
+    // Test koneksi database
+    await sequelize.authenticate();
+    console.log('Koneksi database berhasil.');
+
+    // Sinkronisasi model dengan tabel di database
+    await sequelize.sync();
+    console.log('Sinkronisasi model dengan tabel berhasil.');
+
+    // Cek jika tabel pengguna kosong, tambahkan pengguna awal
+    const usersCount = await User.count();
+    if (usersCount === 0) {
+      await User.create({
+        nama: 'Admin',
+        email: 'admin@example.com',
+        password: 'admin123',
+      });
+      console.log('Pengguna awal ditambahkan.');
+    }
+  } catch (error) {
+    console.error('Gagal koneksi database:', error);
+  }
+})();
+
+// Start server
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server berjalan di http://localhost:${port}`);
 });
