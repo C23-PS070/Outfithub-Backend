@@ -49,7 +49,40 @@
   --storage-type=TYPE \
   --storage-size=SIZE
   ```
+  
   _Note: You must change the INSTANCE_NAME, PASSWORD, MYSQL_VERSION, TIER_INSTANCE, REGION, TYPE and SIZE according to what you want to create._
+
+* Connect to the created instance:
+  ```bash
+  gcloud sql connect INSTANCE_NAME -u root
+  ```
+
+  _Note: You must change the INSTANCE_NAME according to the instance you have created. Wait until the password input appears, then enter PASSWORD in the input that appears to continue._
+  
+* Create a database:
+  ```sql
+  CREATE DATABASE DB_NAME;
+  ```
+  
+  _Note: You must change the DB_NAME according to the instance you have created._
+  
+* Select the database that will be used:
+  ```sql
+  USE DB_NAME;
+  ```
+  
+  _Note: You must change the DB_NAME according to the instance you have created._
+  
+* Create a table:
+  ```sql
+  CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  fullname VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP        
+  );
+  ```
   
 ### Deployment
 * Clone the repository using git:
