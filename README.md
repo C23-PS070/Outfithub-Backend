@@ -41,7 +41,13 @@
 ### SQL Instance
 * Create SQL Instance:
   ```bash
-  gcloud sql instances create INSTANCE_NAME --root-password=PASSWORD --database-version=MYSQL_VERSION --tier=TIER_INSTANCE --region=REGION --storage-type=TYPE --storage-size=SIZE
+  gcloud sql instances create INSTANCE_NAME \
+  --root-password=PASSWORD \
+  --database-version=MYSQL_VERSION \
+  --tier=TIER_INSTANCE \
+  --region=REGION \
+  --storage-type=TYPE \
+  --storage-size=SIZE
   ```
   _Note: You must change the INSTANCE_NAME, PASSWORD, MYSQL_VERSION, TIER_INSTANCE, REGION, TYPE and SIZE in the app.js file according to what you want to create._
   
