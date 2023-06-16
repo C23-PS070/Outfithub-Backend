@@ -8,7 +8,7 @@
 
 ## Architecture
 <div align="center">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhUPeISar6xDcOEHgB2Aw7TCURcJ6MQaVSNrvuraBn_o9h-saOHZQc_m1iuO-Kf8PO201nbKKiEiamLMHurzyRyP54jZVT3St_LBGqQvKpOkijBYrHQYkxG_aUDSQgoGMrZ9RlJcbqMVGc9EqcfQc6Wh9JAEVxyxzauPGo1Ay86dD4iJVyH-x-B5O9rg/s320/Untitled-2023-06-16-1708.png"/>
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgB69Dk6ooa3C7JzSga86izAClJYZLbzQVvBep3NzP5Ik6FRRTs5NFQasw2oORBE2xY_kTKqVY9mQGd38NnaCJXOYKe8sA-D10FiRkm-1ib4Iaerqa6uuJngvx2jb1o9p46fJckoxJRHzXGBTsCSlYI9GxqCO_VerRaafYsPolDvlg5Bmj6pWngJn7k7g/s320/Untitled-2023-06-16-1708.png"/>
 </div>
 
 <br>
