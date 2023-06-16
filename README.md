@@ -1,7 +1,14 @@
 <div align="center">
 
-# Outfithub Backend
+# OutfitHub Backend
 
+</div>
+
+<br>
+
+## Architecture
+<div align="center">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhUPeISar6xDcOEHgB2Aw7TCURcJ6MQaVSNrvuraBn_o9h-saOHZQc_m1iuO-Kf8PO201nbKKiEiamLMHurzyRyP54jZVT3St_LBGqQvKpOkijBYrHQYkxG_aUDSQgoGMrZ9RlJcbqMVGc9EqcfQc6Wh9JAEVxyxzauPGo1Ay86dD4iJVyH-x-B5O9rg/s320/Untitled-2023-06-16-1708.png"/>
 </div>
 
 <br>
