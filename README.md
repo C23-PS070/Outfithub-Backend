@@ -51,7 +51,7 @@
   cd Outfithub-Backend
   ```
   
-  _Note: Make sure you have created a credentials.json from a service account that has permission to access Google Cloud Storage.You must also change the PATH_TO_BUCKET and BUCKET_NAME in the app.py file according to what you have created using the Cloud Shell Editor or other text editor._
+  _Note: You must change the SECRET_KEY, DB_USER, DB_NAME, DB_PASS and INSTANCE_CONNECTION_NAME in the app.js file according to what you have created using the Cloud Shell Editor or other text editor._
   
 * Build an image:
   ```bash
