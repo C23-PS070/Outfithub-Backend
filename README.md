@@ -25,7 +25,9 @@
   ```bash
   cd Outfithub-Backend
   ```
+  
   _Note: You must change the SECRET_KEY, DB_USER, DB_NAME, DB_PASS and INSTANCE_CONNECTION_NAME in the app.js file according to what you have created._
+  
 * Install the packages:
   ```bash
   npm install
