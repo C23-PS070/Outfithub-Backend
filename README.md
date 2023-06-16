@@ -26,7 +26,7 @@
   cd Outfithub-Backend
   ```
   
-  _Note: You must change the SECRET_KEY, DB_USER, DB_NAME, DB_PASS and INSTANCE_CONNECTION_NAME in the app.js file according to what you have created._
+  _Note: You must change the ```SECRET_KEY```, ```DB_USER```, ```DB_NAME```, ```DB_PASS``` and ```INSTANCE_CONNECTION_NAME``` in the app.js file according to what you have created._
   
 * Install the packages:
   ```bash
@@ -45,7 +45,7 @@
 * Create SQL Instance:
   ```bash
   gcloud sql instances create INSTANCE_NAME \
-  --root-password=PASSWORD \
+  --root-password=DB_PASS \
   --database-version=MYSQL_VERSION \
   --tier=TIER_INSTANCE \
   --region=REGION \
@@ -53,28 +53,28 @@
   --storage-size=SIZE
   ```
   
-  _Note: You must change the INSTANCE_NAME, PASSWORD, MYSQL_VERSION, TIER_INSTANCE, REGION, TYPE and SIZE according to what you want to create._
+  _Note: You must change the ```INSTANCE_NAME```, ```DB_PASS```, ```MYSQL_VERSION```, ```TIER_INSTANCE```, ```REGION```, ```TYPE``` and ```SIZE``` according to what you want to create._
 
 * Connect to the created instance:
   ```bash
   gcloud sql connect INSTANCE_NAME -u root
   ```
 
-  _Note: You must change the INSTANCE_NAME according to the instance you have created. Wait until the password input appears, then enter PASSWORD in the input that appears to continue._
+  _Note: You must change the ```INSTANCE_NAME``` according to the instance you have created. Wait until the password input appears, then enter ```DB_PASS``` in the input that appears to continue._
   
 * Create a database:
   ```sql
   CREATE DATABASE DB_NAME;
   ```
   
-  _Note: You must change the DB_NAME according to the instance you have created._
+  _Note: You must change the ```DB_NAME``` according to the instance you have created._
   
 * Select the database that will be used:
   ```sql
   USE DB_NAME;
   ```
   
-  _Note: You must change the DB_NAME according to the instance you have created._
+  _Note: You must change the ```DB_NAME``` according to the instance you have created._
   
 * Create a table:
   ```sql
@@ -97,23 +97,23 @@
   cd Outfithub-Backend
   ```
   
-  _Note: You must change the SECRET_KEY, DB_USER, DB_NAME, DB_PASS and INSTANCE_CONNECTION_NAME in the app.js file according to what you have created using the Cloud Shell Editor or other text editor._
+  _Note: You must change the ```SECRET_KEY```, ```DB_USER```, ```DB_NAME```, ```DB_PASS``` and ```INSTANCE_CONNECTION_NAME``` in the app.js file according to what you have created using the Cloud Shell Editor or other text editor._
   
 * Build an image:
   ```bash
   gcloud builds submit --tag gcr.io/PROJECT_ID/IMAGE_NAME
   ```
   
-   _Note: You must change the PROJECT_ID and IMAGE_NAME according to what you want to create._
+   _Note: You must change the ```PROJECT_ID``` and ```IMAGE_NAME``` according to what you want to create._
  
 * Make sure the image that has been created is running properly:
   ```bash
    docker run -p 8080:8080 IMAGE_NAME
   ```
   
-  _Notes: You must change the IMAGE_NAME according to the image you have created._
+  _Notes: You must change the ```IMAGE_NAME``` according to the image you have created._
   
-* Deploy a Cloud Run service
+* Deploy a Cloud Run service:
   ```bash
   gcloud run deploy SERVICE_NAME \
   --image IMAGE_NAME \
@@ -123,7 +123,7 @@
   --allow-unauthenticated \
   ```
   
-   _Notes: You must change the SERVICE_NAME, IMAGE_NAME, INSTANCE_CONNECTION_NAME and REGION according to what you want to create._
+   _Notes: You must change the ```SERVICE_NAME```, ```IMAGE_NAME```, ```INSTANCE_CONNECTION_NAME``` and ```REGION``` according to what you want to create._
 
 * Perform the test using the deployed link.
 
