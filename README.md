@@ -16,7 +16,7 @@
   ```
 * Have a Google Cloud Platform account if you want to deploy using GCP.
 
-### Installation
+### Local Installation
 * Clone the repository using git:
   ```bash
   git clone https://github.com/C23-PS070/Outfithub-Backend.git
