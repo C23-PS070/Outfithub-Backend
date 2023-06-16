@@ -1,6 +1,6 @@
 <div align="center">
 
-# OutfitHub Backend
+# Outfithub Backend
 
 </div>
 
