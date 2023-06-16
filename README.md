@@ -42,7 +42,44 @@
 * 
   
 ### Deployment
-* 
+* Clone the repository using git:
+   ```bash
+  git clone https://github.com/C23-PS070/Outfithub-Backend.git
+  ```
+* Move to project folder:
+  ```bash
+  cd Outfithub-Backend
+  ```
+  
+  _Note: Make sure you have created a credentials.json from a service account that has permission to access Google Cloud Storage.You must also change the PATH_TO_BUCKET and BUCKET_NAME in the app.py file according to what you have created using the Cloud Shell Editor or other text editor._
+  
+* Build an image:
+  ```bash
+  gcloud builds submit --tag gcr.io/PROJECT_ID/IMAGE_NAME
+  ```
+  
+   _Note: You must change the PROJECT_ID and IMAGE_NAME according to what you want to create._
+ 
+* Make sure the image that has been created is running properly:
+  ```bash
+   docker run -p 8080:8080 IMAGE_NAME
+  ```
+  
+  _Notes: You must change the IMAGE_NAME according to the image you have created._
+  
+* Deploy a Cloud Run service
+  ```bash
+  gcloud run deploy SERVICE_NAME \
+  --image IMAGE_NAME \
+  --add-cloudsql-instances INSTANCE_CONNECTION_NAME \
+  --platform managed \
+  --region REGION \
+  --allow-unauthenticated \
+  ```
+  
+   _Notes: You must change the SERVICE_NAME, IMAGE_NAME, INSTANCE_CONNECTION_NAME and REGION according to what you want to create._
+
+* Perform the test using the deployed link.
 
 <br>
 
