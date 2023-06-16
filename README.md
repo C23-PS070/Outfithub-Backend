@@ -49,7 +49,7 @@
   --storage-type=TYPE \
   --storage-size=SIZE
   ```
-  _Note: You must change the INSTANCE_NAME, PASSWORD, MYSQL_VERSION, TIER_INSTANCE, REGION, TYPE and SIZE in the app.js file according to what you want to create._
+  _Note: You must change the INSTANCE_NAME, PASSWORD, MYSQL_VERSION, TIER_INSTANCE, REGION, TYPE and SIZE according to what you want to create._
   
 ### Deployment
 * Clone the repository using git:
